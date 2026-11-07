@@ -1,0 +1,130 @@
+'use client';
+
+import { useRef } from 'react';
+import { gsap, ScrollTrigger, SplitText, useGSAP, prefersReducedMotion } from '@/lib/gsap';
+import { onIntroDone } from '@/lib/intro';
+import { ButtonLink, PortraitPlaceholder } from './ui';
+
+/** Подгоняет размер имени точно под ширину контейнера (ширина текста растёт не строго линейно). */
+function fitToWidth(h1: HTMLElement, text: HTMLElement) {
+  const target = h1.clientWidth - parseFloat(getComputedStyle(h1).paddingLeft) * 2;
+  let size = 100;
+  for (let i = 0; i < 4; i++) {
+    h1.style.fontSize = `${size}px`;
+    const w = text.getBoundingClientRect().width;
+    if (!w) return;
+    size *= target / w;
+  }
+  h1.style.fontSize = `${(size * 0.995).toFixed(2)}px`;
+}
+
+export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const root = ref.current!;
+      const h1 = root.querySelector<HTMLElement>('.hero__name')!;
+      const text = h1.querySelector<HTMLElement>('.hero__name-text')!;
+      const reduced = prefersReducedMotion();
+
+      // AW-Flow · Split Stagger — имя делится на буквы
+      const split = SplitText.create(text, { type: 'chars', charsClass: 'hero__char' });
+
+      fitToWidth(h1, text);
+      let last = h1.clientWidth;
+      const ro = new ResizeObserver(() => {
+        if (h1.clientWidth === last) return;
+        last = h1.clientWidth;
+        fitToWidth(h1, text);
+        ScrollTrigger.refresh();
+      });
+      ro.observe(h1);
+      document.fonts?.ready.then(() => {
+        fitToWidth(h1, text);
+        ScrollTrigger.refresh();
+      });
+
+      if (reduced) return () => ro.disconnect();
+
+      const tl = gsap.timeline({ paused: true, defaults: { ease: 'expo.out' } });
+      tl.from(split.chars, {
+        yPercent: 118,
+        rotate: 7,
+        transformOrigin: '0% 100%',
+        duration: 1.3,
+        stagger: 0.045,
+      })
+        // AW-Flow · Mask Wipe — карточка раскрывается шторкой снизу, фото «оседает»
+        .from('.hero__card', { clipPath: 'inset(100% 0% 0% 0% round 24px)', duration: 1.4, ease: 'expo.inOut', clearProps: 'clipPath' }, 0.15)
+        .from('.hero__card .portrait', { scale: 1.18, duration: 2, ease: 'power3.out' }, 0.15)
+        .from('.hero__line', { scaleX: 0, transformOrigin: '0% 50%', duration: 1.8, ease: 'expo.inOut' }, 0.4)
+        .from('[data-hero-fade]', { y: 34, autoAlpha: 0, duration: 1.1, stagger: 0.09, ease: 'power3.out' }, 0.75)
+        .from('.hero__caption > *', { y: 18, autoAlpha: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out' }, 1.05);
+
+      const off = onIntroDone(() => tl.play());
+
+      // мягкий параллакс при скролле
+      const st = { trigger: root, start: 'top top', end: 'bottom top', scrub: true };
+      gsap.to(h1, { yPercent: 22, ease: 'none', scrollTrigger: st });
+      gsap.to('.hero__card .portrait__svg', { yPercent: 7, ease: 'none', scrollTrigger: st });
+      gsap.to('.hero__left, .hero__right', { y: -40, ease: 'none', scrollTrigger: st });
+
+      return () => {
+        off();
+        ro.disconnect();
+      };
+    },
+    { scope: ref },
+  );
+
+  return (
+    <section className="hero container" ref={ref} aria-labelledby="hero-title">
+      <h1 className="hero__name" id="hero-title" aria-label="Анна Соколова">
+        <span className="hero__name-text" aria-hidden="true">
+          Анна Соколова
+        </span>
+      </h1>
+
+      <div className="hero__stage">
+        <span className="hero__line" aria-hidden="true" />
+
+        <div className="hero__left">
+          <p className="eyebrow" data-hero-fade>
+            <span className="dot" />
+            Онлайн-консультации
+          </p>
+          <div className="hero__left-bottom">
+            <p className="hero__subtitle" data-hero-fade>
+              Психологическая поддержка для тех, кто готов к&nbsp;переменам
+            </p>
+            <div data-hero-fade>
+              <ButtonLink href="#contact">Записаться на консультацию</ButtonLink>
+            </div>
+          </div>
+        </div>
+
+        <figure className="hero__card">
+          <PortraitPlaceholder tone="dark" label="Место для портрета Анны Соколовой" />
+          <figcaption className="hero__caption">
+            <span className="hero__caption-title">Клинический психолог</span>
+            <span className="hero__caption-sub">Онлайн · с 2018 года</span>
+          </figcaption>
+        </figure>
+
+        <div className="hero__right">
+          <p className="hero__quote" data-hero-fade>
+            Бережно. Без&nbsp;осуждения.
+            <br />
+            В&nbsp;вашем темпе.
+          </p>
+          <ul className="hero__facts">
+            <li data-hero-fade>Онлайн из любой точки мира</li>
+            <li data-hero-fade>Сессия — 50 минут</li>
+            <li data-hero-fade>Полная конфиденциальность</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}

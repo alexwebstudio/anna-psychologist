@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Анна Соколова — клинический психолог онлайн</title>
+  <meta name="description" content="Клинический психолог Анна Соколова. Онлайн-консультации для взрослых: тревога и стресс, самооценка, отношения, поиск себя.">
+  <meta name="theme-color" content="#8A9BB0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ 1. ХЕДЕР ============ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#top" class="logo" aria-label="Анна Соколова — на главную">Анна Соколова</a>
+
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <ul class="nav__list">
+        <li><a href="#about" class="nav__link">Обо мне</a></li>
+        <li><a href="#services" class="nav__link">Направления</a></li>
+        <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+        <li><a href="#blog" class="nav__link">Блог</a></li>
+        <li><a href="#contacts" class="nav__link">Контакты</a></li>
+      </ul>
+      <div class="nav__mobile-extra">
+        <a href="tel:+79999999999" class="nav__phone">+7 999 999 99 99</a>
+        <a href="#contact" class="btn btn--dark nav__cta">Записаться</a>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <a href="tel:+79999999999" class="header__phone">+7 999 999 99 99</a>
+      <a href="#contact" class="btn btn--dark btn--sm">Записаться</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="page" id="top">
+
+  <!-- ============ 2. ГЕРОЙ ============ -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <h1 class="hero__name" id="hero-title"><span data-fit>Анна Соколова</span></h1>
+
+    <div class="hero__stage">
+      <span class="hero__line" aria-hidden="true"></span>
+
+      <div class="hero__left">
+        <p class="eyebrow"><span class="dot"></span>Онлайн-консультации</p>
+        <div class="hero__left-bottom">
+          <p class="hero__subtitle">Психологическая поддержка для тех, кто готов к&nbsp;переменам</p>
+          <a href="#contact" class="btn btn--dark">
+            Записаться на консультацию
+            <span class="btn__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="hero__card">
+        <!-- Заглушка: замените на <img src="img/portrait.jpg" alt="Анна Соколова"> -->
+        <div class="portrait portrait--dark" role="img" aria-label="Место для портрета Анны Соколовой">
+          <svg class="portrait__svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <defs>
+              <linearGradient id="pd" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#C9BBA8" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#C9BBA8" stop-opacity=".04"/>
+              </linearGradient>
+            </defs>
+            <circle cx="200" cy="190" r="150" fill="none" stroke="#C9BBA8" stroke-opacity=".18"/>
+            <ellipse cx="200" cy="200" rx="66" ry="82" fill="url(#pd)"/>
+            <path d="M172 268h56v40h-56z" fill="url(#pd)"/>
+            <path d="M48 500c8-112 70-176 152-176s144 64 152 176z" fill="url(#pd)"/>
+          </svg>
+          <span class="portrait__tag">Портрет · 4:5</span>
+        </div>
+        <figcaption class="hero__caption">
+          <span class="hero__caption-title">Клинический психолог</span>
+          <span class="hero__caption-sub">Онлайн · с 2018 года</span>
+        </figcaption>
+      </figure>
+
+      <div class="hero__right">
+        <p class="hero__quote">Бережно. Без&nbsp;осуждения.<br>В&nbsp;вашем темпе.</p>
+        <ul class="hero__facts">
+          <li>Онлайн из любой точки мира</li>
+          <li>Сессия — 50 минут</li>
+          <li>Полная конфиденциальность</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. СТАТИСТИКА ============ -->
+  <section class="stats" aria-label="Практика в цифрах">
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <p class="stat__num"><span data-count="8">8</span>&nbsp;лет</p>
+        <p class="stat__label">частной<br>практики</p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat__num"><span data-count="500">500</span>+</p>
+        <p class="stat__label">проведённых<br>консультаций</p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat__num"><span data-count="95">95</span>%</p>
+        <p class="stat__label">клиентов отмечают<br>результат</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. НАПРАВЛЕНИЯ ============ -->
+  <section class="services section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">С чем я работаю</p>
+          <h2 class="display services__title reveal" id="services-title">Помогу разобраться даже в&nbsp;самых запутанных ситуациях</h2>
+        </div>
+        <p class="section-head__text reveal">Работаю со&nbsp;взрослыми в&nbsp;онлайн-формате. Выберите направление — или&nbsp;просто приходите с&nbsp;тем, что беспокоит: разберёмся вместе.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__num">01</span>
+            <h3 class="card__title">Тревога и стресс</h3>
+          </div>
+          <svg class="card__icon" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="96" r="12"/>
+            <circle cx="60" cy="84" r="24"/>
+            <circle cx="60" cy="72" r="36"/>
+            <circle cx="60" cy="62" r="46" class="accent-stroke"/>
+          </svg>
+          <p class="card__text">Панические атаки, постоянное напряжение, бессонница и&nbsp;выгорание</p>
+          <button class="card__link" data-service="0">Подробнее <span aria-hidden="true">→</span></button>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__num">02</span>
+            <h3 class="card__title">Самооценка и уверенность</h3>
+          </div>
+          <svg class="card__icon" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="62" r="46"/>
+            <path d="M60 16 100 85H20Z" class="accent-stroke"/>
+            <path d="M60 16v69M40 50.5h40"/>
+          </svg>
+          <p class="card__text">Внутренний критик, страх ошибки, зависимость от&nbsp;чужого мнения</p>
+          <button class="card__link" data-service="1">Подробнее <span aria-hidden="true">→</span></button>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__num">03</span>
+            <h3 class="card__title">Отношения и близость</h3>
+          </div>
+          <svg class="card__icon" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><clipPath id="clip-rel"><circle cx="44" cy="60" r="32"/></clipPath></defs>
+            <circle cx="76" cy="60" r="32" clip-path="url(#clip-rel)" class="accent-fill"/>
+            <circle cx="44" cy="60" r="32"/>
+            <circle cx="76" cy="60" r="32"/>
+            <circle cx="60" cy="60" r="52" class="accent-stroke"/>
+          </svg>
+          <p class="card__text">Конфликты, одиночество, сложные границы с&nbsp;партнёром и&nbsp;родителями</p>
+          <button class="card__link" data-service="2">Подробнее <span aria-hidden="true">→</span></button>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="card__num">04</span>
+            <h3 class="card__title">Поиск себя и смысла</h3>
+          </div>
+          <svg class="card__icon" viewBox="0 0 120 120" aria-hidden="true">
+            <rect x="28" y="28" width="64" height="64"/>
+            <rect x="28" y="28" width="64" height="64" transform="rotate(45 60 60)" class="accent-stroke"/>
+            <circle cx="60" cy="60" r="16"/>
+            <circle cx="60" cy="60" r="2.5" class="dot-fill"/>
+          </svg>
+          <p class="card__text">Кризисы, потеря ориентиров, вопрос «чего я&nbsp;на&nbsp;самом деле хочу»</p>
+          <button class="card__link" data-service="3">Подробнее <span aria-hidden="true">→</span></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. ОБО МНЕ ============ -->
+  <section class="about section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__grid">
+        <figure class="about__photo reveal">
+          <!-- Заглушка: замените на <img src="img/about.jpg" alt="Анна Соколова за работой"> -->
+          <div class="portrait portrait--light" role="img" aria-label="Место для фотографии Анны Соколовой">
+            <svg class="portrait__svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+              <circle cx="200" cy="190" r="150" fill="none" stroke="#C9BBA8" stroke-opacity=".7"/>
+              <ellipse cx="200" cy="200" rx="66" ry="82" fill="#C9BBA8" fill-opacity=".45"/>
+              <path d="M172 268h56v40h-56z" fill="#C9BBA8" fill-opacity=".45"/>
+              <path d="M48 500c8-112 70-176 152-176s144 64 152 176z" fill="#C9BBA8" fill-opacity=".45"/>
+            </svg>
+            <span class="portrait__tag">Фото · 4:5</span>
+          </div>
+          <figcaption class="about__badge">
+            <span class="about__badge-num">8 лет</span>
+            <span>помогаю людям<br>вернуть опору</span>
+          </figcaption>
+        </figure>
+
+        <div class="about__body">
+          <p class="eyebrow reveal" id="about-title">Обо мне</p>
+          <p class="about__lead reveal">
+            Привет! Меня зовут Анна. Я&nbsp;<span class="hl">клинический психолог</span>, работаю со&nbsp;взрослыми в&nbsp;онлайн-формате.
+            Помогаю <span class="hl">снять тревогу</span>, <span class="hl">вернуть опору</span> и&nbsp;построить жизнь, в&nbsp;которой есть
+            <span class="hl">смысл и&nbsp;спокойствие</span>. Со&nbsp;мной — бережно, без&nbsp;осуждения и&nbsp;в&nbsp;вашем темпе.
+          </p>
+
+          <ul class="about__facts">
+            <li class="reveal"><span class="about__fact-title">Формат</span>Онлайн: Zoom, Telegram или&nbsp;WhatsApp</li>
+            <li class="reveal"><span class="about__fact-title">Длительность</span>50&nbsp;минут, обычно раз в&nbsp;неделю</li>
+            <li class="reveal"><span class="about__fact-title">Принципы</span>Конфиденциальность и&nbsp;этический кодекс</li>
+          </ul>
+
+          <a href="#contact" class="btn btn--outline reveal">
+            Записаться на консультацию
+            <span class="btn__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Отзывы: тексты ниже — примеры, замените на реальные отзывы клиентов -->
+      <div class="reviews" id="reviews">
+        <p class="eyebrow">Отзывы клиентов</p>
+        <div class="reviews__body">
+          <span class="reviews__mark" aria-hidden="true">“</span>
+          <div class="reviews__viewport" aria-live="polite">
+            <blockquote class="review is-active">
+              <p>После первых встреч стало заметно легче дышать. Тревога больше не&nbsp;управляет моими днями, а&nbsp;я&nbsp;наконец понимаю, что со&nbsp;мной происходит.</p>
+              <footer>Мария, 34 года</footer>
+            </blockquote>
+            <blockquote class="review">
+              <p>Очень бережный и&nbsp;внимательный подход. Ни&nbsp;разу не&nbsp;почувствовала осуждения — только поддержку и&nbsp;ясные шаги.</p>
+              <footer>Екатерина, 29 лет</footer>
+            </blockquote>
+            <blockquote class="review">
+              <p>Пришёл с&nbsp;ощущением, что застрял. Ушёл с&nbsp;пониманием, чего хочу и&nbsp;как к&nbsp;этому двигаться.</p>
+              <footer>Алексей, 41 год</footer>
+            </blockquote>
+          </div>
+          <div class="reviews__controls">
+            <div class="reviews__dots" role="tablist" aria-label="Выбор отзыва"></div>
+            <div class="reviews__arrows">
+              <button class="round-btn" data-dir="-1" aria-label="Предыдущий отзыв">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M13 8H3M7 4 3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="round-btn" data-dir="1" aria-label="Следующий отзыв">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. ФИНАЛЬНЫЙ CTA + ФУТЕР ============ -->
+  <section class="cta" id="contact" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta__card">
+        <svg class="cta__ornament cta__ornament--l" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98"/><circle cx="100" cy="100" r="66"/><circle cx="100" cy="100" r="34"/></svg>
+        <svg class="cta__ornament cta__ornament--r" viewBox="0 0 200 200" aria-hidden="true"><rect x="30" y="30" width="140" height="140"/><rect x="30" y="30" width="140" height="140" transform="rotate(45 100 100)"/></svg>
+
+        <p class="eyebrow eyebrow--light reveal"><span class="dot"></span>Первый шаг к переменам</p>
+        <h2 class="display cta__title reveal" id="cta-title">Сделайте первый шаг <span>уже сегодня</span></h2>
+        <p class="cta__text reveal">На&nbsp;первой встрече познакомимся, обсудим ваш запрос и&nbsp;решим, как&nbsp;двигаться дальше. Без&nbsp;обязательств.</p>
+        <div class="cta__actions reveal">
+          <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn--sand">
+            Записаться
+            <span class="btn__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a href="tel:+79999999999" class="btn btn--ghost-light">+7 999 999 99 99</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#top" class="logo">Анна Соколова</a>
+          <p>Клинический психолог.<br>Онлайн-консультации для&nbsp;взрослых.</p>
+        </div>
+        <div>
+          <p class="footer__title">Контакты</p>
+          <ul class="footer__list">
+            <li><a href="tel:+79999999999">+7 999 999 99 99</a></li>
+            <li><a href="mailto:hello@annasokolova.ru">hello@annasokolova.ru</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__title">Telegram</p>
+          <ul class="footer__list">
+            <li><a href="https://t.me/" target="_blank" rel="noopener">Написать в&nbsp;Telegram</a></li>
+            <li id="blog"><a href="https://t.me/" target="_blank" rel="noopener">Блог — Telegram-канал</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__title">Соцсети</p>
+          <ul class="footer__list">
+            <li><a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a></li>
+            <li><a href="https://dzen.ru/" target="_blank" rel="noopener">Дзен</a></li>
+            <li><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Анна Соколова. Все права защищены.</p>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Модальное окно «Подробнее» -->
+<dialog class="modal" id="service-modal" aria-labelledby="modal-title">
+  <div class="modal__inner">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg viewBox="0 0 16 16" width="16" height="16"><path d="m3 3 10 10M13 3 3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <p class="eyebrow" id="modal-num"></p>
+    <h3 class="display modal__title" id="modal-title"></h3>
+    <p class="modal__lead" id="modal-lead"></p>
+    <p class="modal__subtitle">С какими запросами приходят</p>
+    <ul class="modal__list" id="modal-list"></ul>
+    <a href="#contact" class="btn btn--dark modal__cta">
+      Записаться на консультацию
+      <span class="btn__arrow" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+  </div>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
